@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight} from "lucide-react"; // Icon Library
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
   "/images/c1.webp",
@@ -17,7 +17,6 @@ const Banner = () => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 3000);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -30,7 +29,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="relative w-[98%] ml-3 mt-4 h-64 overflow-hidden bg-gradient-to-r from-pink-400 to-pink-200 flex justify-center items-center rounded-lg shadow-lg">
+    <div className="relative w-[98%] ml-1 sm:ml-3 mt-4 h-40 sm:h-64 overflow-hidden bg-gradient-to-r from-pink-400 to-pink-200 flex justify-center items-center rounded-lg shadow-lg">
       {/* Image */}
       <motion.img
         key={index}
@@ -46,17 +45,17 @@ const Banner = () => {
       {/* Previous Button */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white p-3 rounded-md shadow-lg hover:bg-gray-100 transition"
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white p-2 sm:p-3 rounded-md shadow-lg hover:bg-gray-100 transition"
       >
-        <ChevronLeft className="text-gray-700 w-6 h-14" />
+        <ChevronLeft className="text-gray-700 w-4 h-8 sm:w-6 sm:h-14" />
       </button>
 
       {/* Next Button */}
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white p-3 rounded-md shadow-lg hover:bg-gray-100 transition"
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white p-2 sm:p-3 rounded-md shadow-lg hover:bg-gray-100 transition"
       >
-        <ChevronRight className="text-gray-700 w-6 h-14" />
+        <ChevronRight className="text-gray-700 w-4 h-8 sm:w-6 sm:h-14" />
       </button>
     </div>
   );
